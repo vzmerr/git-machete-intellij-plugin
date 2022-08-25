@@ -275,6 +275,7 @@ public final class EnhancedGraphTable extends BaseEnhancedGraphTable
   }
 
   public void queueDiscover(Path macheteFilePath, @UI Runnable doOnUIThreadWhenReady) {
+    LOG.debug("[mixon] queueDiscover");
     new GitMacheteRepositoryDiscoverer(
         project,
         getGitRepositorySelectionProvider(),
@@ -351,11 +352,13 @@ public final class EnhancedGraphTable extends BaseEnhancedGraphTable
           val nullableRepositorySnapshot = newGitMacheteRepositorySnapshot;
           this.gitMacheteRepositorySnapshot = nullableRepositorySnapshot;
           if (nullableRepositorySnapshot != null) {
+            LOG.debug("[mixon] refreshModel: non null");
             refreshModel(gitRepository,
                 nullableRepositorySnapshot,
                 doOnUIThreadWhenReady);
 
           } else {
+            LOG.debug("[mixon] refreshModel: null");
             refreshModel(gitRepository, NullGitMacheteRepositorySnapshot.getInstance(), doOnUIThreadWhenReady);
           }
         };
@@ -363,13 +366,17 @@ public final class EnhancedGraphTable extends BaseEnhancedGraphTable
         setTextForEmptyTable(getString("string.GitMachete.EnhancedGraphTable.empty-table-text.loading"));
 
         LOG.debug("Queuing repository update onto a non-UI thread");
+        LOG.debug("[mixon] Queuing repository update onto a non-UI thread...");
         new GitMacheteRepositoryUpdateBackgroundable(project, gitRepository, branchLayoutReader, doRefreshModel).queue();
+        LOG.debug("[mixon] Queuing repository update onto a non-UI thread: done");
 
         val macheteFile = gitRepository.getMacheteFile();
 
         if (macheteFile != null) {
+          LOG.debug("[mixon] markDirtyAndRefresh...");
           VfsUtil.markDirtyAndRefresh(/* async */ true, /* recursive */ false, /* reloadChildren */ false, macheteFile);
         }
+        LOG.debug("[mixon] markDirtyAndRefresh: done");
       });
     } else {
       LOG.debug("Project is disposed");
