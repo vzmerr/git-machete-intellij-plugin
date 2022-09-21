@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## v3.1.0
+- Add a notification after checking out a non-managed branch with an option to add the branch to the branch layout.
+
 ## v3.0.3
 - Enabled Ctrl + left-click to work as a right-click for macOS users, for displaying the machete actions on a branch.
 

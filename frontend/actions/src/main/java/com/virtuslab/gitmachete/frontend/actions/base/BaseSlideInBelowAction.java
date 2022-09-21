@@ -27,7 +27,6 @@ import lombok.experimental.ExtensionMethod;
 import lombok.val;
 import org.checkerframework.checker.guieffect.qual.UIEffect;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.checkerframework.checker.tainting.qual.Untainted;
 
 import com.virtuslab.branchlayout.api.IBranchLayoutEntry;
 import com.virtuslab.gitmachete.frontend.actions.backgroundables.FetchBackgroundable;
@@ -154,7 +153,7 @@ public abstract class BaseSlideInBelowAction extends BaseGitMacheteRepositoryRea
       Project project,
       GitRepository gitRepository,
       String startPoint,
-      @Untainted String initialName) {
+      String initialName) {
     val repositories = java.util.Collections.singletonList(gitRepository);
     val gitNewBranchDialog = new GitNewBranchDialog(project,
         repositories,
