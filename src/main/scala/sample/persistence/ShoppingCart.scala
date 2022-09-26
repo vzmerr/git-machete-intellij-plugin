@@ -36,7 +36,7 @@ object ShoppingCart {
     def isCheckedOut: Boolean =
       checkoutDate.isDefined
 
-    def hasItem(itemId: String): Boolean =
+    def hasItem(thisItem: String): Boolean =
       items.contains(itemId)
 
     def isEmpty: Boolean =
