@@ -53,7 +53,7 @@ object ShoppingCart {
       copy(items = items - itemI)
 
     def checkout(now: Instant): State =
-      copy(checkoutDate = Some(now))
+      copy(checkoutDate = Some(   now))
 
     def toSummary: Summary =
       Summary(items, isCheckedOut)
