@@ -50,7 +50,7 @@ object ShoppingCart {
     }
 
     def remove(itemId: String): State =
-      copy(items = items - itemI)
+      copy(items =  - itemI)
 
     def checut(now: Instant): State =
       copy(checkoutDate = Some(   now))
