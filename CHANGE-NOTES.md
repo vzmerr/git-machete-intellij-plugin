@@ -3,7 +3,7 @@
 ## Unreleased
 
 ## v3.1.0
-- Added branch navigation allowing to checking out the next branch with `alt + down-arrow` or `alt + right-arrow`, previous branch with `alt + up-arrow`, and parent branch with `alt + left-arrow` in the machete layout.
+- Added branch navigation allowing to check out the next branch with `alt + down-arrow` or `alt + right-arrow`, previous branch with `alt + up-arrow`, and parent branch with `alt + left-arrow` when Git Machete tab is opened.
 
 ## v3.0.3
 - Enabled Ctrl + mouse click to work as a right-click for Mac users
