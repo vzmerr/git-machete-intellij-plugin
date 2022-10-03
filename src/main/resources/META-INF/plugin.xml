@@ -29,7 +29,6 @@
 
     <actions>
 
-<!--        is it searchable? should not be -->
         <action id="GitMachete.SlideInUnmanagedBelowAction"
                 class="com.virtuslab.gitmachete.frontend.actions.common.SlideInUnmanagedBelowAction"/>
 
