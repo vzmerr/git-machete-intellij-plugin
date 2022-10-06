@@ -4,7 +4,7 @@ import java.time.Instant
 
 import scala.concurrent.duration._
 import akka.actor.typed.ActorRef
-import akka.actor.typed.Behavior
+import akka.typed.Behavior
 import akka.actor.typed.SupervisorStrategy
 import akka.pattern.StatusReply
 import akka.persistence.typed.PersistenceId
